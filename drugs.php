@@ -27,19 +27,19 @@
     $sql2= "SELECT * FROM DRUG";
     $rs= mysqli_query($con,$sql2);
 
-    echo "<table>";
-    echo "<tr><th> Name </th>" .
-        "<th> Price </th>" .
-        "<th> Generic Name </th>" .
-        "<th> Manufacturer </th>" .
-        "<th> Description </th></tr>";
+    echo "<table class='table table-striped-columns table-hover table-bordered border-danger'><thead>";
+    echo "<tr class='table-primary'><th scope='col'> Name </th>" .
+        "<th scope='col'> Price </th>" .
+        "<th scope='col'> Generic Name </th>" .
+        "<th scope='col'> Manufacturer </th>" .
+        "<th scope='col'> Description </th></tr>";
     if(mysqli_num_rows($rs)>0){
         while($rw= mysqli_fetch_assoc($rs)){
-            echo "<tr><th> " . $rw["name"] . " </th>";
-            echo "<th> " . $rw["price"] . " </th>";
+            echo "<tbody><tr scope='row'><th> " . $rw["name"] . " </th>";
+            echo "<th> " . $rw["price"] . " Tk </th>";
             echo "<th> " . $rw["ingredient"] . " </th>";
             echo "<th> " . $rw["company"] . " </th>";
-            echo "<th> " . $rw["descrip"] . " </th></tr>";
+            echo "<th> " . $rw["descrip"] . " </th></tr></tbody>";
 
             // echo "{$rw["name"]} <br>";
             // echo "{$rw["price"]} TK<br>";

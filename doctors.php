@@ -27,18 +27,18 @@
     $sql3= "SELECT * FROM DOC";
     $rsl= mysqli_query($cons,$sql3);
 
-    echo "<table>";
-    echo "<tr><th> Name </th>" . 
-    "<th> Expertise </th>" . 
-    "<th> Alumni </th>" . 
-    "<th> Contact </th></tr>";
+    echo "<table class='table table-striped-columns table-hover table-bordered border-danger'><thead>";
+    echo "<tr class='table-primary'><th scope='col'> Name </th>" . 
+    "<th scope='col'> Expertise </th>" . 
+    "<th scope='col'> Alumni </th>" . 
+    "<th scope='col'> Contact </th></tr></thead>";
 
     if(mysqli_num_rows($rsl)>0){
         while($rws= mysqli_fetch_assoc($rsl)){
-            echo "<tr><th> " . $rws["name"] . " </th>";
+            echo "<tbody><tr scope='row'><th> " . $rws["name"] . " </th>";
             echo "<th> " . $rws["exp"] . " </th>";
             echo "<th> " . $rws["schl"] . " </th>";
-            echo "<th> " . $rws["phone"] . " </th></tr>";
+            echo "<th> " . $rws["phone"] . " </th></tr></tbody>";
 
 
             // <!-- echo "{$rws["name"]} <br>";
